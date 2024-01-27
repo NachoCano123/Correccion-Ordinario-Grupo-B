@@ -4,7 +4,7 @@ import { Query } from "./resolvers/query.ts";
 import { Mutation } from "./resolvers/mutation.ts";
 import { Contact } from "./resolvers/contact.ts";
 import { typeDefs } from "./gql/schema.ts";
-import montoose from "mongoose";
+import mongoose from "mongoose";
 
 const MONGO_URL = Deno.env.get("MONGO_URL");
 if (!MONGO_URL) {
@@ -12,7 +12,7 @@ if (!MONGO_URL) {
 }
 
 // Connect to MongoDB
-await montoose.connect(MONGO_URL);
+await mongoose.connect(MONGO_URL);
 
 console.info("🚀 Connected to MongoDB");
 
